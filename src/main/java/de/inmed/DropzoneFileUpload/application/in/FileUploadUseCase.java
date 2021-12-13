@@ -22,6 +22,7 @@ public interface FileUploadUseCase {
         @JsonCreator
         public UploadFileCommand(FileUpload file) {
             this.file = file;
+            validateSelf();
         }
     }
 
