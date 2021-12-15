@@ -3,10 +3,9 @@ package de.inmed.DropzoneFileUpload.adapter.fileSystem;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import de.inmed.DropzoneFileUpload.application.in.CreateOrLoadDataDeliveryUseCase;
 import de.inmed.DropzoneFileUpload.common.SelfValidating;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDelivery;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDeliveryId;
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileUpload;
-import lombok.Getter;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDelivery;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDeliveryId;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileUpload;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,7 +13,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
 
@@ -48,19 +46,23 @@ public class FileSystemService {
         @NotNull
         private MultipartFile file;
         @NotNull
-        @NotEmpty
-        //@IsDataDeliveryId
-        private String dataDeliveryId;
+        private DataDeliveryId dataDeliveryId;
 
         @JsonCreator
         public AddFileCommand(MultipartFile file, String dataDeliveryId) {
+            this.file = file;
+            this.dataDeliveryId = DataDeliveryId.from(dataDeliveryId);
+            validateSelf();
+        }
+
+        public AddFileCommand(MultipartFile file, DataDeliveryId dataDeliveryId) {
             this.file = file;
             this.dataDeliveryId = dataDeliveryId;
             validateSelf();
         }
 
         public DataDeliveryId getDataDeliveryId() {
-            return DataDeliveryId.from(dataDeliveryId);
+            return dataDeliveryId;
         }
 
         public MultipartFile getFile() {

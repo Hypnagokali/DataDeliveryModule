@@ -1,7 +1,7 @@
 package de.inmed.DropzoneFileUpload.domain;
 
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileId;
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileUpload;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileId;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileUpload;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

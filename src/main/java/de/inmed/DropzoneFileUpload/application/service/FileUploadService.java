@@ -1,7 +1,7 @@
 package de.inmed.DropzoneFileUpload.application.service;
 
 import de.inmed.DropzoneFileUpload.application.in.FileUploadUseCase;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDelivery;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDelivery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

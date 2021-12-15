@@ -1,7 +1,7 @@
 package de.inmed.DropzoneFileUpload.adapter.web.service;
 
 import de.inmed.DropzoneFileUpload.adapter.web.dto.UploadDto;
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileUpload;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileUpload;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;

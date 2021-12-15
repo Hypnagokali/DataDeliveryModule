@@ -1,10 +1,10 @@
 package de.inmed.DropzoneFileUpload.application.service;
 
 import de.inmed.DropzoneFileUpload.application.in.FileUploadUseCase;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDelivery;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDeliveryId;
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileId;
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileUpload;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDelivery;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDeliveryId;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileId;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileUpload;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.BDDMockito;

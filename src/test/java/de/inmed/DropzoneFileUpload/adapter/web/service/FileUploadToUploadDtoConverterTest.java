@@ -1,8 +1,8 @@
 package de.inmed.DropzoneFileUpload.adapter.web.service;
 
 import de.inmed.DropzoneFileUpload.adapter.web.dto.UploadDto;
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileId;
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileUpload;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileId;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileUpload;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;

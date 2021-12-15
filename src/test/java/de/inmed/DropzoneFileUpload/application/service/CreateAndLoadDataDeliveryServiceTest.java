@@ -1,8 +1,8 @@
 package de.inmed.DropzoneFileUpload.application.service;
 
 import de.inmed.DropzoneFileUpload.application.in.CreateOrLoadDataDeliveryUseCase;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDelivery;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDeliveryId;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDelivery;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDeliveryId;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

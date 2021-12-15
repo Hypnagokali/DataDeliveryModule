@@ -1,4 +1,4 @@
-package de.inmed.DropzoneFileUpload.domain.FileUpload;
+package de.inmed.DropzoneFileUpload.domain.fileUpload;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

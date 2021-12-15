@@ -1,6 +1,6 @@
 package de.inmed.DropzoneFileUpload.adapter.web.service;
 
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileUpload;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileUpload;
 
 import java.util.Collection;
 

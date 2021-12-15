@@ -1,4 +1,4 @@
-package de.inmed.DropzoneFileUpload.domain.DataDelivery;
+package de.inmed.DropzoneFileUpload.domain.dataDelivery;
 
 import java.util.Objects;
 

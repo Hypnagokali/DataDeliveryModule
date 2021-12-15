@@ -1,7 +1,7 @@
-package de.inmed.DropzoneFileUpload.domain.DataDelivery;
+package de.inmed.DropzoneFileUpload.domain.dataDelivery;
 
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileId;
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileUpload;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileId;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileUpload;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashSet;
@@ -43,8 +43,7 @@ public class DataDelivery {
         FileId fileId = new FileId(transientFileCounter, FileId.FileType.TRANSIENT);
         FileUpload fileUpload = new FileUpload(fileId, file.getSize(), file.getOriginalFilename());
         fileUpload.setPath(path);
-        // FileNameGenerator::fileName(fileUpload, this)
-        fileUpload.setFileName(this.getId().value() + "_file_" + fileUpload.getId().value());
+        fileUpload.setFileName(this.getId().value() + "_file_" + fileUpload.getId().value(), file.getOriginalFilename());
         // ToDo: User der die Datei angelegt hat und weiteres
         fileUploadSet.add(fileUpload);
 

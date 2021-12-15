@@ -2,11 +2,10 @@ package de.inmed.DropzoneFileUpload.application.in;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import de.inmed.DropzoneFileUpload.common.SelfValidating;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDelivery;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDeliveryId;
-import de.inmed.DropzoneFileUpload.domain.FileUpload.FileUpload;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDelivery;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDeliveryId;
+import de.inmed.DropzoneFileUpload.domain.fileUpload.FileUpload;
 import lombok.Getter;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.constraints.NotNull;
 

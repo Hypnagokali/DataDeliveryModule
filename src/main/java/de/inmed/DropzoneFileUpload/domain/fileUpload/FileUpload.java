@@ -1,10 +1,13 @@
-package de.inmed.DropzoneFileUpload.domain.FileUpload;
+package de.inmed.DropzoneFileUpload.domain.fileUpload;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.File;
 import java.nio.file.Path;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @NoArgsConstructor
 @Setter
@@ -25,6 +28,16 @@ public class FileUpload {
 
     public Path getPathToFile() {
         return Path.of(path + "/" + fileName);
+    }
+
+    public void setFileName(String prefix, String origFilename) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+        LocalDateTime dateTime = LocalDateTime.now();
+        String timestamp = formatter.format(dateTime);
+        this.fileName = timestamp + "_" + prefix + "_" + origFilename;
+
+        // ToDo
+
     }
 
     public FileId getId() {

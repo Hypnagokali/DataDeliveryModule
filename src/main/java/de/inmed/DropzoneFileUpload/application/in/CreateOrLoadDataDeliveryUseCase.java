@@ -1,7 +1,7 @@
 package de.inmed.DropzoneFileUpload.application.in;
 
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDelivery;
-import de.inmed.DropzoneFileUpload.domain.DataDelivery.DataDeliveryId;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDelivery;
+import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDeliveryId;
 
 public interface CreateOrLoadDataDeliveryUseCase {
 
