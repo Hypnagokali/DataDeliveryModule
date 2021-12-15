@@ -4,7 +4,7 @@ import java.io.File;
 import java.nio.file.Path;
 import java.util.Arrays;
 
-public class UniqueFilenameBuilder {
+public class UniqueFilenameBuilder implements FilenameBuilder {
 
     private String filename;
     private String[] filesInDirectory;

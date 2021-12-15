@@ -8,27 +8,37 @@ import de.inmed.DropzoneFileUpload.domain.dataDelivery.DataDeliveryId;
 import de.inmed.DropzoneFileUpload.domain.fileUpload.FileUpload;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.PostConstruct;
 import javax.validation.constraints.NotNull;
 import java.io.IOException;
 
-@PropertySource("")
+@PropertySource("classpath:application.properties")
 @Service
 @RequiredArgsConstructor
 @Slf4j
 public class FileSystemService {
     
     private final CreateOrLoadDataDeliveryUseCase createOrLoadDataDeliveryUseCase;
+    private final Environment environment;
 
-    @Value("${inmed.temppath}")
     private String tempPath = "";
+
+    @PostConstruct
+    public void init() {
+        tempPath = environment.getProperty("inmed.temppath");
+    }
+
 
     public FileUpload addToDataDeliveryAndWriteToFileSystem(AddFileCommand addFileCommand) {
         DataDelivery dataDelivery = createOrLoadDataDeliveryUseCase.findDataDelivery(addFileCommand.getDataDeliveryId());
+
         FileUpload fileUpload = dataDelivery.addTransientFile(addFileCommand.getFile(), tempPath);
 
         try {

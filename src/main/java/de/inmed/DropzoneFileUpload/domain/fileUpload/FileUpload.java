@@ -4,10 +4,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.File;
 import java.nio.file.Path;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 @NoArgsConstructor
 @Setter
@@ -26,18 +23,20 @@ public class FileUpload {
         this.size = size;
     }
 
+    public Path getPath() {
+        return Path.of(path);
+    }
+
     public Path getPathToFile() {
         return Path.of(path + "/" + fileName);
     }
 
-    public void setFileName(String prefix, String origFilename) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmm");
-        LocalDateTime dateTime = LocalDateTime.now();
-        String timestamp = formatter.format(dateTime);
-        this.fileName = timestamp + "_" + prefix + "_" + origFilename;
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
-        // ToDo
-
+    public void setFileName(FilenameBuilder filenameBuilder) {
+        this.fileName = filenameBuilder.build().toString();
     }
 
     public FileId getId() {
